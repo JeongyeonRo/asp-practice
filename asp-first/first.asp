@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<title>
+    
+</title>
 <html>
     <body>
         '문자열 출력하기
