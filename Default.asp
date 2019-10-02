@@ -5,6 +5,6 @@
         <title>Default</title>
     </head>
     <body>
-    
+        <button><a href="Write.asp">±Û¾²±â</button>
     </body>
 </html>
