@@ -1,4 +1,5 @@
 <!doctype html>
+<!--#include file =".\inc\header.asp" -->
 <html>
     <head>
         <meta charset="euc-kr">

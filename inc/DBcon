@@ -1,0 +1,16 @@
+<%
+    Set Conn = Server.CreateObject("ADODB.Connection")
+    Conn.Open("Provider=SQLOLEDB;User ID=DESKTOP-BK7PT8N\Jeongyeon;Password=;Initial Catalog=DESKTOP-BK7PT8N;Data Source=127.0.0.1")
+
+    Set Rs = Server.CreateObject("Adodb.RecordSet")
+
+    SQL = "Select * from member"
+
+    Rs.open SQL, conn
+
+    Rs_subject = Rs("subject")
+
+    Response.write Rs_subject
+
+
+%>
