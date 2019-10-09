@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="euc-kr">
+        <title>child</title>
+        <script>
+            function getParentText(){
+                document.getElementById("childInput2").value = 
+                    opener.document.getElementById("parentInput2").value;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Child Win</h2>
+        1. <input type="text" id="childInput"><br><br>
+
+        2. <input type="text" id="childInput2">
+        <button onclick="getParentText()">bring</button><br><br>
+    </body>
+</html>

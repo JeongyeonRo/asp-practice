@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="euc-kr">
+        <title>Parent</title>
+        <script>
+            var openWin;
+            function openChild(){
+                //window.name = "부모창 이름";
+                window.name = "parentForm";
+                //window.open("open 할 window","자식창 이름","팝업창옵션");
+                openWin = window.open("child.html", "childForm","width=300, height=300");
+            }
+            function setChildText(){
+                //alert("부모창의 내용을 자식창으로 전달");
+                openWin.document.getElementById("childInput").value = document.getElementById("parentInput").value;
+            }
+            function openChild2(){
+                window.name = "parentForm";
+                window.open("child.html", "childForm","width=300, height=300");
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Parent Win</h2>
+
+        <br>1. 자식창을 열고 부모창의 값 전달
+        <input type="button" value="openC" onclick="openChild()"><br><br>
+        전달값: <input type="text" id="parentInput">
+        <input type="button" value="convey" onclick="setChildText()"><br><br>
+        
+        2.자식창에서 부모창의 값 가져오기
+        <input type="button" value="openC" onclick="openChild2()"><br>
+        전달값: <input type="text" id="parentInput2"><br><br>
+
+    </body>
+</html>
