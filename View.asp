@@ -3,14 +3,19 @@
     Set Conn = Server.CreateObject("ADODB.Connection") 
     Conn.Open "Provider=SQLOLEDB;User ID=sa;Password=0000;Initial Catalog=MyDB;Data Source=DESKTOP-BK7PT8N"
 
-    strSQL = "SELECT BNO, TITLE, WRITER, CONTENT, REGDATE FROM MYBOARD ORDER BY BNO DESC"
+    bno = Request("idx")
+
+    strSQL = " "
+    strSQL = strSQL & " SELECT TITLE, WRITER, CONTENT"
+    strSQL = strSQL & " FROM MYBOARD "
+    strSQL = strSQL & " WHERE BNO = " & bno
 
     Set rs = Server.CreateObject("ADODB.Recordset")
-    rs.Open strSql, Conn
+    rs.Open strSQL, Conn
 
-   title = rs(1)
-   writer = rs(2)
-   content = rs(3)
+   title = rs(0)
+   writer = rs(1)
+   content = rs(2)
 %>
 <html>
     <head>
@@ -23,16 +28,16 @@
          <td colspan="2" align="center"><b>상세보기</b></td>
       </tr>
       <tr>
-         <td align="center">제목</td>
+         <td align="center" width="70" height="30">제목</td>
          <td><%=title%></td>
       </tr>
       <tr>
-         <td align="center">작성자</td>
-         <td><input type="text" name="writer" size="50"></td>
+         <td align="center" width="70" height="30">작성자</td>
+         <td><%=writer%></td>
       </tr>
       <tr>
-         <td align="center">내용</td>
-         <td><textarea name="content" cols="51" rows="10"></textarea></td>
+         <td align="center" width="70" height="100">내용</td>
+         <td><%=content%></td>
       </tr>
       </body>
 </html>

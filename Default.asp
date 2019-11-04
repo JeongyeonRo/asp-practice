@@ -11,8 +11,6 @@
 
     PASSWD_YN = rs(5)
 
-
-
 %>
 <html>
     <head>
@@ -43,7 +41,7 @@
             <tr align="center">
                 <td><%=rs(0)%></td>
                 <td>
-                    <a href="content.asp?idx=<%=rs(0)%>" onclick="passwdchk()"><%=rs(1)%></a>
+                    <a href="View.asp?idx=<%=rs(0)%>" onclick="passwdchk()"><%=rs(1)%></a>
                 </td>
                 <td><%=rs(2)%></td> 
                 <td><%=left(rs(3), 10)%></td>
