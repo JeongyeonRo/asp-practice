@@ -1,12 +1,25 @@
 <!doctype html>
 <html>
     <body>
+        <article>
+
+        </article>
         <!-- <input type="button" value="fetch" onclick="alert('AJAX')"> -->
-        <input type="button" value="fetch" onclick="
-            fetch('apple').then(function(response){
-                response.text().then(function(text){
+
+        <!-- <input type="button" value="fetch" onclick="
+            fetch('apple.txt').then(function(response){
+                response.text().then(function(text){ //변수 설정 text
                     alert(text);
                 })
-           })">
+           })
+           "> -->
+
+           <input type="button" value="fetch" onclick="
+                fetch('list.txt').then(function(response){
+                    response.text().then(function(text){
+                        document.querySelector('article').innerHTML = text;
+                    })
+                })"
+           >
     </body>
 </html>
