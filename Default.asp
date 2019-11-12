@@ -33,7 +33,14 @@
     <script>
 
     function bbsList(){
-        ajax
+        $.ajax({
+            type:"GET",
+            url:"/Proc.asp",
+            dataType:"JSON",
+            success:function(){
+            }
+        });           
+
     }
 
 
