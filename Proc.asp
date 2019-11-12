@@ -9,7 +9,7 @@
     Set rs = Server.CreateObject("ADODB.Recordset")
     rs.Open strSql, Conn
 
-    PASSWD_YN = rs(5)
-
+    Response.Write "DATA:"
+    Response.Writ
 
     %>

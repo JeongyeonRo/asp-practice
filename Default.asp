@@ -38,6 +38,7 @@
             url:"/Proc.asp",
             dataType:"JSON",
             success:function(){
+                alert("¼º°ø");
             }
         });           
 
