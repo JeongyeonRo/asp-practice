@@ -6,7 +6,7 @@
     bno = Request("idx")
 
     strSQL = " "
-    strSQL = strSQL & " SELECT TITLE, WRITER, CONTENT"
+    strSQL = strSQL & " SELECT TITLE, WRITER, CONTENT, BNO"
     strSQL = strSQL & " FROM MYBOARD "
     strSQL = strSQL & " WHERE BNO = " & bno
 
@@ -16,6 +16,7 @@
    title = rs(0)
    writer = rs(1)
    content = rs(2)
+   bno = rs(3)
 %>
 <html>
     <head>
@@ -39,5 +40,17 @@
          <td align="center" width="70" height="100">내용</td>
          <td><%=content%></td>
       </tr>
-      </body>
+      </table>
+      <br>
+      <div align="center">
+         <input type="button" value="수 정" onclick="javascript:modBtn();">
+      </div>
+   </body>
+   <script type="text/javascript">
+      function modBtn(){
+         var bno = <%=bno%>;
+         window.location = "http://localhost/Write.asp?bno="+bno;      
+      }
+
+   </script>
 </html>

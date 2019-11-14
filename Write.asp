@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<%
+   Set Conn = Server.CreateObject("ADODB.Connection") 
+    Conn.Open "Provider=SQLOLEDB;User ID=sa;Password=0000;Initial Catalog=MyDB;Data Source=DESKTOP-BK7PT8N"
+
+    bno = Request("bno")
+
+   If bno <> "" Then
+    strSQL = " "
+    strSQL = strSQL & " SELECT TITLE, WRITER, CONTENT, PASSWD_YN"
+    strSQL = strSQL & " FROM MYBOARD "
+    strSQL = strSQL & " WHERE BNO = " & bno
+
+    Set rs = Server.CreateObject("ADODB.Recordset")
+    rs.Open strSQL, Conn
+
+   title = rs(0)
+   writer = rs(1)
+   content = rs(2)
+   passwd_yn = rs(3)
+
+   End If
+%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <html>
     <head>
@@ -24,21 +46,21 @@
       </tr>
       <tr>
          <td align="center">제목</td>
-         <td><input type="text" name="title" id="title" size="50"></td>
+         <td><input type="text" name="title" id="title" size="50" value="<%=title%>"></td>
       </tr>
       <tr>
          <td align="center">작성자</td>
-         <td><input type="text" name="writer" size="50"></td>
+         <td><input type="text" name="writer" size="50" value="<%=writer%>"></td>
       </tr>
       <tr>
          <td align="center">내용</td>
-         <td><textarea name="content" cols="51" rows="10"></textarea></td>
+         <td><textarea name="content" cols="51" rows="10"><%=content%></textarea></td>
       </tr>
       <tr>
          <td align="center">공개/비공개</td>
          <td>
             <input type="radio" name="passwd_yn" value="T" checked>공개
-            <input type="radio" name="passwd_yn" value= "F">비공개
+            <input type="radio" name="passwd_yn" value= "F" <%If passwd_yn="F" Then%> checked <%End If%>>비공개
          </td>
       </tr>
       <tr>
