@@ -3,7 +3,13 @@
     Set Conn = Server.CreateObject("ADODB.Connection") 
     Conn.Open "Provider=SQLOLEDB;User ID=sa;Password=0000;Initial Catalog=MyDB;Data Source=DESKTOP-BK7PT8N"
 
-    strSQL = "SELECT BNO, TITLE, WRITER, REGDATE, READCNT, PASSWD_YN FROM MYBOARD ORDER BY BNO DESC"
+    strSQL = "SELECT BNO, TITLE, WRITER, REGDATE, READCNT, PASSWD_YN "
+    strSQL = strSQL & "FROM MYBOARD "
+    strSQL = strSQL & "WHERE 1 = 1"
+    If keyword <> "" Then
+        strSQL = strSQL & "AND TITLE LIKE %" & keyword & "%"
+    End If
+    strSQL = strSQL & "ORDER BY BNO DESC"
 
 
     Set rs = Server.CreateObject("ADODB.Recordset")
@@ -21,6 +27,14 @@
         <h2 align="center">목록보기</h2>
     <div>
         <a href="Write.asp">글쓰기</a>
+        <div align="center">
+        <select value="" onchange="">
+            <option value="">전체</option>
+            <option value="title">제목</option>
+            <option value="writer">작성자</option>
+        </select>
+        <input type="text" width="50">
+        </div><br>
         <div align="center">
             <table border width="600">
                 <tr align="center">
