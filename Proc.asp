@@ -13,4 +13,6 @@
 
     Set rs = Server.CreateObject("ADODB.Recordset")
     rs.Open strSql, Conn
+
+    Response.Write rs(0)
 %>
