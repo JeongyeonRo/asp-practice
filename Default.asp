@@ -11,14 +11,15 @@
     End If
     strSQL = strSQL & "ORDER BY BNO DESC"
 
-
     Set rs = Server.CreateObject("ADODB.Recordset")
     rs.Open strSql, Conn
 %>
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <meta charset="euc-kr">
         <title>Default</title>
+
     </head>
     <body>
         <h2 align="center">목록보기</h2>
