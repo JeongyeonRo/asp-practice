@@ -1,4 +1,5 @@
 <!doctype html>
+<!--#include virtual="/inc/head.asp"-->
 <% 
     Set Conn = Server.CreateObject("ADODB.Connection") 
     Conn.Open "Provider=SQLOLEDB;User ID=sa;Password=0000;Initial Catalog=MyDB;Data Source=DESKTOP-BK7PT8N"
@@ -24,7 +25,6 @@
     <body>
         <h2 align="center">목록보기</h2>
     <div>
-        <a href="/board/Write.asp">글쓰기</a>
         <div align="center">
         <select value="" onchange="">
             <option value="">전체</option>
