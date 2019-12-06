@@ -64,7 +64,10 @@
         end If
         sql = sql & "ORDER BY NUM DESC"
 
+        Response.Write sql
         Response.Write 
+
+        Conn.Execute sql        '데이터베이스 쿼리 실행
 
 
     End If
