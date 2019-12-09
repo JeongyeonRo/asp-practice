@@ -1,5 +1,5 @@
 <!doctype html>
-<!--#include virtual="/inc/head.asp"-->
+<!--#include virtual="/inc/menu/head.asp"-->
 <%
     nextPage   = request("Nextpage")
         if nextPage = "0" Or nextPage = "" then

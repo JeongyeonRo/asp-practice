@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!--#include virtual="/inc/head.asp"-->
+<!--#include virtual="/inc/menu/head.asp"-->
 
 <head>
   <style>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!--#include virtual="/inc/head.asp"-->
+<!--#include virtual="/inc/menu/head.asp"-->
 
 <%
    Set Conn = Server.CreateObject("ADODB.Connection") 
