@@ -16,7 +16,7 @@
   <title>main</title>
   </head>
   <body>
-      <div class="now_time">
+      <div class="now_time" align="center" style="border:1px solid red">
           <h1>00:00</h1>
       </div>
       

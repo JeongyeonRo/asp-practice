@@ -65,9 +65,12 @@
         sql = sql & "ORDER BY NUM DESC"
 
         Response.Write sql
-        Response.Write 
 
         Conn.Execute sql        '데이터베이스 쿼리 실행
+
+        Response.Write 
+
+        '가져온 데이터를 리스트 형식으로 저장
 
 
     End If
